@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+
+import { rehypeCodeTitles, remarkCodeTitles } from './src/plugins/rehypeCodeTitles.js';
 import locales from './locales.json';
 import starlightLinksValidator from 'starlight-links-validator';
 import starlightBlog from 'starlight-blog';
@@ -197,6 +199,9 @@ export default defineConfig({
 		shikiConfig: {
 			langs: ['powershell', 'ts', 'rust', 'bash', 'json', 'toml', 'html', 'js'],
 		},
+		remarkPlugins: [
+			remarkCodeTitles,
+		],
 		rehypePlugins: [
 			rehypeHeadingIds,
 			[
