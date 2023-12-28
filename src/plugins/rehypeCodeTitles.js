@@ -10,7 +10,7 @@ function remarkCodeTitles() {
       // Only add title if it doesn't already exist
       if (!hasTitle) {
         node.lang = `${language}`;
-        node.title = `${language}`;
+        // node.title = `${language}`;
       }
     });
   };
